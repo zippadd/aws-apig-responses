@@ -42,7 +42,7 @@ const populateConstructorExports = (moduleExports, httpCodesMap) => {
        */
       constructor(message = "") {
         super(code, message, statusId);
-        this.name = `${statusId}Error`;
+        this.name = `${statusId}`;
       }
     };
 
