@@ -21,10 +21,13 @@
   },
   "license": "MIT",
   "private": false,
+  "dependencies": {
+    "pascal-case": "^2.0.1"
+  },
   "devDependencies": {
     "codecov": "^3.0.2",
-    "eslint": "^5.0.0",
-    "jest": "^23.1.0",
+    "eslint": "^5.0.1",
+    "jest": "^23.2.0",
     "jsdoc-to-markdown": "^4.0.1"
   },
   "scripts": {
@@ -32,8 +35,5 @@
     "lint": "eslint . ",
     "test": "jest --coverage && codecov",
     "validate": "yarn lint && yarn jest"
-  },
-  "dependencies": {
-    "pascal-case": "^2.0.1"
   }
 }
