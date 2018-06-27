@@ -14,7 +14,7 @@ Supports client (e.g. 404), server (e.g. 500), and non errors (e.g. 302) for max
 Utilizes Nodes built-in HTTP module for status codes and descriptions.
 
 ## Contribution
-I welcome feature request issues and pull requests to improve the 
+I welcome bug reports, feature requests, and pull requests to improve the module! Can't guarantee they'll necessarily be implemented/incorporated, but will do my best to consider. If you do plan a pull request for a larger feature, please create an issue to discuss first.
 
 ## Supported Runtimes
 * Lambda NodeJS 6.10+
