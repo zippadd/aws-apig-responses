@@ -44,7 +44,6 @@ throw new resp.[302]("https://redirect-me-here12345.com");
 NOTE: 302 does not return the Location header natively, but is intended to provide a location for the URL that can be referenced in a mapping template
 
 Upon invoking new, a subclass of HttpError, which is a subclass of Error, with the prepended message is returned. Details below.
-E.g. for `javascript throw new resp.NotFound("These aren't the droids you're looking for");`, a NotFoundError is returned with message [404][NotFound]: These aren't the droids you're looking for
 
 ### HttpError
 Base class for the specific HTTP errors
@@ -60,3 +59,7 @@ Supports non-errors, such as 302 Redirect, but since API Gateway requires an Err
 | statusId | <code>string</code> | Pascal case identifier of the HTTP status (e.g. NotFound) |
 | status | <code>string</code> | Same as statusCode |
 | origMessage | <code>string</code> | The original non-prepended message |
+
+####Example
+`javascript throw new resp.NotFound("These aren't the droids you're looking for");`
+A NotFoundError is returned with message [404][NotFound]: These aren't the droids you're looking for

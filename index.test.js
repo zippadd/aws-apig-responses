@@ -151,7 +151,7 @@ describe("Basic Tests", () => {
       statusCode: errorCode,
       statusId: errorId,
       status: errorCode,
-      origMessage: errorMsg
+      origMessage: new Error(errorMsg)
     });
   });
 });
