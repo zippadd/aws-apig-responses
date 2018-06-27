@@ -4,7 +4,10 @@ node_js:
   - "node"
   - "8.10"
   - "6.10"
+<<<<<<< Updated upstream
   - "4.3"
+=======
+>>>>>>> Stashed changes
 install:
   - npm install
 script:
