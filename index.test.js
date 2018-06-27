@@ -10,7 +10,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -23,7 +24,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -36,7 +38,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -49,7 +52,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -62,7 +66,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -75,7 +80,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -88,7 +94,8 @@ describe("Basic Tests", () => {
       message: `[${httpCode}][${httpId}]: ${redirectURL}`,
       statusCode: httpCode,
       statusId: httpId,
-      status: httpCode
+      status: httpCode,
+      origMessage: redirectURL
     });
   });
 
@@ -101,7 +108,8 @@ describe("Basic Tests", () => {
       message: `[${httpCode}][${httpId}]: ${redirectURL}`,
       statusCode: httpCode,
       statusId: httpId,
-      status: httpCode
+      status: httpCode,
+      origMessage: redirectURL
     });
   });
 
@@ -114,7 +122,8 @@ describe("Basic Tests", () => {
       message: `[${httpCode}][${httpId}]: ${redirectURL}`,
       statusCode: httpCode,
       statusId: httpId,
-      status: httpCode
+      status: httpCode,
+      origMessage: redirectURL
     });
   });
 
@@ -127,7 +136,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 
@@ -140,7 +150,8 @@ describe("Basic Tests", () => {
       message: `[${errorCode}][${errorId}]: Error: ${errorMsg}`,
       statusCode: errorCode,
       statusId: errorId,
-      status: errorCode
+      status: errorCode,
+      origMessage: errorMsg
     });
   });
 });

@@ -8,17 +8,19 @@ const http = require("http");
  * @property {string} statusCode  HTTP status code e.g. 404
  * @property {string} statusId    Pascal case identifier of the HTTP status (e.g. NotFound)
  * @property {string} status      Same as statusCode
+ * @property {string} origMessage The original non-prepended message
  */
 class HttpError extends Error {
   /**
    * Creates a new HttpError
-   * @param {string} statusCode HTTP status code e.g. 404
-   * @param {string} message    Message for the response. Will be automatically prepended.
-   * @param {string} statusId   Pascal case identifier of the HTTP status (e.g. NotFound)
+   * @param {string} statusCode  HTTP status code e.g. 404
+   * @param {string} message     Message for the response. Will be automatically prepended.
+   * @param {string} statusId    Pascal case identifier of the HTTP status (e.g. NotFound)
    */
   constructor(statusCode, message, statusId) {
     const prependedMsg = `[${statusCode}][${statusId}]: ${message}`;
     super(prependedMsg);
+    this.origMessage = message;
     this.statusCode = statusCode;
     this.statusId = statusId;
     this.status = statusCode;
