@@ -60,6 +60,6 @@ Supports non-errors, such as 302 Redirect, but since API Gateway requires an Err
 | status | <code>string</code> | Same as statusCode |
 | origMessage | <code>string</code> | The original non-prepended message |
 
-####Example
+#### Example
 `javascript throw new resp.NotFound("These aren't the droids you're looking for");`
 A NotFoundError is returned with message [404][NotFound]: These aren't the droids you're looking for
