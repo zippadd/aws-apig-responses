@@ -66,5 +66,5 @@ Supports non-errors, such as 302 Redirect, but since API Gateway requires an Err
 ```javascript
 throw new resp.NotFound("These aren't the droids you're looking for");
 ```
-Returns: NotFoundError
-Message: [404][NotFound]: These aren't the droids you're looking for
+* Returns: NotFoundError
+* Message: [404][NotFound]: These aren't the droids you're looking for
