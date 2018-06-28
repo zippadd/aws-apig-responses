@@ -43,6 +43,8 @@ throw new resp.[302]("https://redirect-me-here12345.com");
 ```
 NOTE: 302 does not return the Location header natively, but is intended to provide a location for the URL that can be referenced in a mapping template
 
+All HTTP codes are available either using the pascal case name (e.g. BadRequest, ServiceUnavailable, etc. [including ImATeapot!]) or numeric code. For a full list, please reference http.STATUS_CODES in the Node HTTP module documentation.
+
 Upon invoking new, a subclass of HttpError, which is a subclass of Error, with the prepended message is returned. Details below.
 
 ### HttpError
@@ -61,5 +63,8 @@ Supports non-errors, such as 302 Redirect, but since API Gateway requires an Err
 | origMessage | <code>string</code> | The original non-prepended message |
 
 #### Example
-`javascript throw new resp.NotFound("These aren't the droids you're looking for");`
-A NotFoundError is returned with message [404][NotFound]: These aren't the droids you're looking for
+```javascript
+throw new resp.NotFound("These aren't the droids you're looking for");
+```
+Returns: A NotFoundError
+Message: [404][NotFound]: These aren't the droids you're looking for
