@@ -33,12 +33,12 @@ throw new resp[404]("These aren't the droids you're looking for");
 /* 500 Internal Server Error */
 throw new resp.InternalServerError();
 throw new resp.InternalServerError("Mistakes were made");
-throw new resp.[500]();
-throw new resp.[500]("Mistakes were made");
+throw new resp[500]();
+throw new resp[500]("Mistakes were made");
 
 /* 302 Found */
 throw new resp.Found("https://redirect-me-here12345.com");
-throw new resp.[302]("https://redirect-me-here12345.com");
+throw new resp[302]("https://redirect-me-here12345.com");
 
 ```
 NOTE: 302 does not return the Location header natively, but is intended to provide a location for the URL that can be referenced in a mapping template
