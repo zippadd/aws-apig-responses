@@ -49,7 +49,7 @@ const populateConstructorExports = (moduleExports, httpCodesMap) => {
     };
 
     moduleExports[code] = codeErrorClass;
-    moduleExports[statusId] = exports[code];
+    moduleExports[statusId] = moduleExports[code];
   }
 };
 
