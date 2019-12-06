@@ -1,5 +1,5 @@
-const pascalCase = require("pascal-case");
-const http = require("http");
+const { pascalCase } = require('pascal-case')
+const http = require('http')
 
 /**
  * Base class for the specific HTTP errors
@@ -17,13 +17,13 @@ class HttpError extends Error {
    * @param {string} message     Message for the response. Will be automatically prepended.
    * @param {string} statusId    Pascal case identifier of the HTTP status (e.g. NotFound)
    */
-  constructor(statusCode, message, statusId) {
-    const prependedMsg = `[${statusCode}][${statusId}]: ${message}`;
-    super(prependedMsg);
-    this.origMessage = message;
-    this.statusCode = statusCode;
-    this.statusId = statusId;
-    this.status = statusCode;
+  constructor (statusCode, message, statusId) {
+    const prependedMsg = `[${statusCode}][${statusId}]: ${message}`
+    super(prependedMsg)
+    this.origMessage = message
+    this.statusCode = statusCode
+    this.statusId = statusId
+    this.status = statusCode
   }
 }
 
@@ -35,22 +35,22 @@ class HttpError extends Error {
  */
 const populateConstructorExports = (moduleExports, httpCodesMap) => {
   for (const code of Object.keys(httpCodesMap)) {
-    const statusDesc = httpCodesMap[code];
-    const statusId = pascalCase(statusDesc.replace("'", "")); // Handle apostrophe correctly (I'm a teapot => ImATeapot)
+    const statusDesc = httpCodesMap[code]
+    const statusId = pascalCase(statusDesc.replace("'", '')) // Handle apostrophe correctly (I'm a teapot => ImATeapot)
     const codeErrorClass = class extends HttpError {
       /**
        * Creates a new class extending HttpError specific to the HTTP status code (e.g NotFoundError)
        * @param {string} message Message for the response
        */
-      constructor(message = "") {
-        super(code, message, statusId);
-        this.name = `${statusId}`;
+      constructor (message = '') {
+        super(code, message, statusId)
+        this.name = `${statusId}`
       }
-    };
+    }
 
-    moduleExports[code] = codeErrorClass;
-    moduleExports[statusId] = moduleExports[code];
+    moduleExports[code] = codeErrorClass
+    moduleExports[statusId] = moduleExports[code]
   }
-};
+}
 
-populateConstructorExports(module.exports, http.STATUS_CODES);
+populateConstructorExports(module.exports, http.STATUS_CODES)
