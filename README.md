@@ -16,8 +16,7 @@ Utilizes Nodes built-in HTTP module for status codes and descriptions.
 I welcome bug reports, feature requests, and pull requests to improve the module! Can't guarantee they'll necessarily be implemented/incorporated, but will do my best to consider. If you do plan a pull request for a larger feature, please create an issue to discuss first.
 
 ## Supported Runtimes
-* Lambda NodeJS 6.10+
-* NodeJS 6+
+* NodeJS 10+
 
 ## Usage
 ```javascript
