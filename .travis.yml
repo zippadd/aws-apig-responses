@@ -1,13 +1,27 @@
 language: node_js
-sudo: false
+os: linux
 node_js:
   - "node"
   - "12"
   - "10"
-install:
-  - npm install
-script:
-  - npm test
-branches:
-  only:
-  - master
+jobs:
+  include:
+    - stage: test
+      if: branch = master OR tag IS present
+      install:
+        - npm install
+      script:
+        - npm test
+    - stage: deploy
+      if: tag IS present
+      script: skip
+      deploy:
+        cleanup: true
+        provider: npm
+        email: backend.services@zippadd.com
+        api_key:
+          secure: "UpFbJosKhANF46nfmP3/0Uqo2VUgShPltOub6Xo7efhreEocgSyqawV1rhV66x2vXqeYXe26a4gvF3bd30HWYbfM9H2gLaKw6Jj449pSs8sEYMrZQglUN8EUiBFaGRJiSohReyw/KIkZy4spbNRDZwW5+bDeaqYXQJ9C2/fXba0aoN0usDPnTx0XDmeyJTqYM+8kz7AOkHPTzHkqCwPDnUpKPDYSgIUv7Ezfj2XLxVE6LPE4q3FieWX8jpUhMwqIfnhUH8uWpK4fM1kX6b9fafkUxaulHeWYjpfeC4JRwLVZk+HDB53bGNq2uQbNlLOvn5sRPFOq+qBwHj0QFPhSodmP0Zd48wG8kvFTpCqeZtKspjaZjjr1C++TG9yxZzzgI9xUfMUZE3iqiQLT50EKML+5JEdPT9JCdP2TfK2yAAiHaR2uTszrmuBrjH9FpytPn48Or5lCA64j1YXsnI63IGhVgHBsBTt4VgzaGLqwo1C7IbWzqoURch9rygWOjDG1nQE1/yrNiWTmDO/eqJbbvVcNSHip8KxzTHz+S6M+1dXJKSES0+Kn6PCF3iu1KSWET+t9Wldd6pSxloE3Lamrruy1727O8vRiwIkwMQejGLEMzNAqQKsNlNMkxLterjqMnptPbZdmzNUK5Oy8Hm1HqRsa2ZI+5HfXF4x9sZ98jDU="
+        on:
+          tags: true
+          repo: zippadd/cfdeploy
+          condition: $(git fetch origin master:master && git branch --contains $TRAVIS_TAG | grep '^[\*| ] master$')

@@ -1,4 +1,5 @@
 # aws-apig-responses
+[![npm](https://img.shields.io/npm/v/aws-apig-responses.svg)](https://www.npmjs.com/package/aws-apig-responses)
 [![Build Status](https://travis-ci.com/zippadd/aws-apig-responses.svg?branch=master)](https://travis-ci.com/zippadd/aws-apig-responses)
 [![codecov](https://codecov.io/gh/zippadd/aws-apig-responses/branch/master/graph/badge.svg)](https://codecov.io/gh/zippadd/aws-apig-responses)
 [![dependencies Status](https://david-dm.org/zippadd/aws-apig-responses/status.svg)](https://david-dm.org/zippadd/aws-apig-responses)
