@@ -1,6 +1,6 @@
 {
   "name": "aws-apig-responses",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "A Error derived object factory designed to provide an easy map to AWS API Gateway error regex.",
   "keywords": [
     "aws",
